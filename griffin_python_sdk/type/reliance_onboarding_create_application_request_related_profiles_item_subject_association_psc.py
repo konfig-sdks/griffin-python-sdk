@@ -15,11 +15,12 @@ from typing_extensions import TypedDict, Literal, TYPE_CHECKING
 
 
 RequiredRelianceOnboardingCreateApplicationRequestRelatedProfilesItemSubjectAssociationPsc = TypedDict("RequiredRelianceOnboardingCreateApplicationRequestRelatedProfilesItemSubjectAssociationPsc", {
-    # The percentage ownership the legal person has of the corporation.
-    "ownership-percent": str,
     })
 
 OptionalRelianceOnboardingCreateApplicationRequestRelatedProfilesItemSubjectAssociationPsc = TypedDict("OptionalRelianceOnboardingCreateApplicationRequestRelatedProfilesItemSubjectAssociationPsc", {
+    # The percentage ownership the legal person has of the corporation.
+    "ownership-percent": str,
+
     # The URL of the entity in Companies House
     "companies-house-url": str,
     }, total=False)

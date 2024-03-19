@@ -138,6 +138,10 @@ class WorkflowsGetWorkflowResponseRequiredClaimTypes(
                         return cls("individual-sources-of-funds")
                     
                     @schemas.classproperty
+                    def NOMINALPERSONWITHSIGNIFICANTCONTROL(cls):
+                        return cls("nominal-person-with-significant-control")
+                    
+                    @schemas.classproperty
                     def HMOVERIFICATION(cls):
                         return cls("hmo-verification")
                     

@@ -2515,6 +2515,98 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
         
             class MetaOapg:
                 required = {
+                    "legal-person-url",
+                    "claim-type",
+                }
+                
+                class properties:
+                    legal_person_url = schemas.StrSchema
+                    companies_house_url = schemas.StrSchema
+                    senior_manager = schemas.BoolSchema
+                    
+                    
+                    class claim_type(
+                        schemas.EnumBase,
+                        schemas.StrSchema
+                    ):
+                    
+                    
+                        class MetaOapg:
+                            enum_value_to_name = {
+                                "nominal-person-with-significant-control": "NOMINALPERSONWITHSIGNIFICANTCONTROL",
+                            }
+                        
+                        @schemas.classproperty
+                        def NOMINALPERSONWITHSIGNIFICANTCONTROL(cls):
+                            return cls("nominal-person-with-significant-control")
+                    __annotations__ = {
+                        "legal-person-url": legal_person_url,
+                        "companies-house-url": companies_house_url,
+                        "senior-manager?": senior_manager,
+                        "claim-type": claim_type,
+                    }
+            
+            
+            @typing.overload
+            def __getitem__(self, name: typing_extensions.Literal["legal-person-url"]) -> MetaOapg.properties.legal_person_url: ...
+            
+            @typing.overload
+            def __getitem__(self, name: typing_extensions.Literal["companies-house-url"]) -> MetaOapg.properties.companies_house_url: ...
+            
+            @typing.overload
+            def __getitem__(self, name: typing_extensions.Literal["senior-manager?"]) -> MetaOapg.properties.senior_manager: ...
+            
+            @typing.overload
+            def __getitem__(self, name: typing_extensions.Literal["claim-type"]) -> MetaOapg.properties.claim_type: ...
+            
+            @typing.overload
+            def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
+            
+            def __getitem__(self, name: typing.Union[typing_extensions.Literal["legal-person-url", "companies-house-url", "senior-manager?", "claim-type", ], str]):
+                # dict_instance[name] accessor
+                return super().__getitem__(name)
+            
+            
+            @typing.overload
+            def get_item_oapg(self, name: typing_extensions.Literal["legal-person-url"]) -> MetaOapg.properties.legal_person_url: ...
+            
+            @typing.overload
+            def get_item_oapg(self, name: typing_extensions.Literal["companies-house-url"]) -> typing.Union[MetaOapg.properties.companies_house_url, schemas.Unset]: ...
+            
+            @typing.overload
+            def get_item_oapg(self, name: typing_extensions.Literal["senior-manager?"]) -> typing.Union[MetaOapg.properties.senior_manager, schemas.Unset]: ...
+            
+            @typing.overload
+            def get_item_oapg(self, name: typing_extensions.Literal["claim-type"]) -> MetaOapg.properties.claim_type: ...
+            
+            @typing.overload
+            def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
+            
+            def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["legal-person-url", "companies-house-url", "senior-manager?", "claim-type", ], str]):
+                return super().get_item_oapg(name)
+            
+        
+            def __new__(
+                cls,
+                *args: typing.Union[dict, frozendict.frozendict, ],
+                _configuration: typing.Optional[schemas.Configuration] = None,
+                **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
+            ) -> 'any_of_14':
+                return super().__new__(
+                    cls,
+                    *args,
+                    _configuration=_configuration,
+                    **kwargs,
+                )
+        
+        
+        class any_of_15(
+            schemas.DictSchema
+        ):
+        
+        
+            class MetaOapg:
+                required = {
                     "business-address",
                     "claim-type",
                 }
@@ -2871,7 +2963,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 *args: typing.Union[dict, frozendict.frozendict, ],
                 _configuration: typing.Optional[schemas.Configuration] = None,
                 **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
-            ) -> 'any_of_14':
+            ) -> 'any_of_15':
                 return super().__new__(
                     cls,
                     *args,
@@ -2880,7 +2972,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 )
         
         
-        class any_of_15(
+        class any_of_16(
             schemas.ComposedBase,
             schemas.DictSchema
         ):
@@ -3548,7 +3640,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 *args: typing.Union[dict, frozendict.frozendict, ],
                 _configuration: typing.Optional[schemas.Configuration] = None,
                 **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
-            ) -> 'any_of_15':
+            ) -> 'any_of_16':
                 return super().__new__(
                     cls,
                     *args,
@@ -3557,7 +3649,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 )
         
         
-        class any_of_16(
+        class any_of_17(
             schemas.DictSchema
         ):
         
@@ -3705,7 +3797,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 *args: typing.Union[dict, frozendict.frozendict, ],
                 _configuration: typing.Optional[schemas.Configuration] = None,
                 **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
-            ) -> 'any_of_16':
+            ) -> 'any_of_17':
                 return super().__new__(
                     cls,
                     *args,
@@ -3714,7 +3806,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 )
         
         
-        class any_of_17(
+        class any_of_18(
             schemas.DictSchema
         ):
         
@@ -3854,7 +3946,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 *args: typing.Union[dict, frozendict.frozendict, ],
                 _configuration: typing.Optional[schemas.Configuration] = None,
                 **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
-            ) -> 'any_of_17':
+            ) -> 'any_of_18':
                 return super().__new__(
                     cls,
                     *args,
@@ -3863,7 +3955,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 )
         
         
-        class any_of_18(
+        class any_of_19(
             schemas.DictSchema
         ):
         
@@ -3964,7 +4056,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 *args: typing.Union[dict, frozendict.frozendict, ],
                 _configuration: typing.Optional[schemas.Configuration] = None,
                 **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
-            ) -> 'any_of_18':
+            ) -> 'any_of_19':
                 return super().__new__(
                     cls,
                     *args,
@@ -3973,7 +4065,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 )
         
         
-        class any_of_19(
+        class any_of_20(
             schemas.DictSchema
         ):
         
@@ -4085,7 +4177,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 *args: typing.Union[dict, frozendict.frozendict, ],
                 _configuration: typing.Optional[schemas.Configuration] = None,
                 **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
-            ) -> 'any_of_19':
+            ) -> 'any_of_20':
                 return super().__new__(
                     cls,
                     *args,
@@ -4094,7 +4186,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 )
         
         
-        class any_of_20(
+        class any_of_21(
             schemas.DictSchema
         ):
         
@@ -4254,7 +4346,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 *args: typing.Union[dict, frozendict.frozendict, ],
                 _configuration: typing.Optional[schemas.Configuration] = None,
                 **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
-            ) -> 'any_of_20':
+            ) -> 'any_of_21':
                 return super().__new__(
                     cls,
                     *args,
@@ -4263,7 +4355,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 )
         
         
-        class any_of_21(
+        class any_of_22(
             schemas.DictSchema
         ):
         
@@ -4418,7 +4510,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 *args: typing.Union[dict, frozendict.frozendict, ],
                 _configuration: typing.Optional[schemas.Configuration] = None,
                 **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
-            ) -> 'any_of_21':
+            ) -> 'any_of_22':
                 return super().__new__(
                     cls,
                     *args,
@@ -4427,7 +4519,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 )
         
         
-        class any_of_22(
+        class any_of_23(
             schemas.DictSchema
         ):
         
@@ -4571,7 +4663,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 *args: typing.Union[dict, frozendict.frozendict, ],
                 _configuration: typing.Optional[schemas.Configuration] = None,
                 **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
-            ) -> 'any_of_22':
+            ) -> 'any_of_23':
                 return super().__new__(
                     cls,
                     *args,
@@ -4580,7 +4672,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 )
         
         
-        class any_of_23(
+        class any_of_24(
             schemas.DictSchema
         ):
         
@@ -4647,7 +4739,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 *args: typing.Union[dict, frozendict.frozendict, ],
                 _configuration: typing.Optional[schemas.Configuration] = None,
                 **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
-            ) -> 'any_of_23':
+            ) -> 'any_of_24':
                 return super().__new__(
                     cls,
                     *args,
@@ -4656,7 +4748,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 )
         
         
-        class any_of_24(
+        class any_of_25(
             schemas.DictSchema
         ):
         
@@ -4771,7 +4863,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 *args: typing.Union[dict, frozendict.frozendict, ],
                 _configuration: typing.Optional[schemas.Configuration] = None,
                 **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
-            ) -> 'any_of_24':
+            ) -> 'any_of_25':
                 return super().__new__(
                     cls,
                     *args,
@@ -4780,7 +4872,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 )
         
         
-        class any_of_25(
+        class any_of_26(
             schemas.DictSchema
         ):
         
@@ -4872,7 +4964,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 nationality: typing.Union[MetaOapg.properties.nationality, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
                 _configuration: typing.Optional[schemas.Configuration] = None,
                 **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
-            ) -> 'any_of_25':
+            ) -> 'any_of_26':
                 return super().__new__(
                     cls,
                     *args,
@@ -4882,7 +4974,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 )
         
         
-        class any_of_26(
+        class any_of_27(
             schemas.DictSchema
         ):
         
@@ -4949,7 +5041,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 *args: typing.Union[dict, frozendict.frozendict, ],
                 _configuration: typing.Optional[schemas.Configuration] = None,
                 **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
-            ) -> 'any_of_26':
+            ) -> 'any_of_27':
                 return super().__new__(
                     cls,
                     *args,
@@ -4958,7 +5050,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 )
         
         
-        class any_of_27(
+        class any_of_28(
             schemas.DictSchema
         ):
         
@@ -5033,7 +5125,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 *args: typing.Union[dict, frozendict.frozendict, ],
                 _configuration: typing.Optional[schemas.Configuration] = None,
                 **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
-            ) -> 'any_of_27':
+            ) -> 'any_of_28':
                 return super().__new__(
                     cls,
                     *args,
@@ -5042,7 +5134,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 )
         
         
-        class any_of_28(
+        class any_of_29(
             schemas.DictSchema
         ):
         
@@ -5405,7 +5497,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 *args: typing.Union[dict, frozendict.frozendict, ],
                 _configuration: typing.Optional[schemas.Configuration] = None,
                 **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
-            ) -> 'any_of_28':
+            ) -> 'any_of_29':
                 return super().__new__(
                     cls,
                     *args,
@@ -5414,7 +5506,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 )
         
         
-        class any_of_29(
+        class any_of_30(
             schemas.DictSchema
         ):
         
@@ -5481,7 +5573,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 *args: typing.Union[dict, frozendict.frozendict, ],
                 _configuration: typing.Optional[schemas.Configuration] = None,
                 **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
-            ) -> 'any_of_29':
+            ) -> 'any_of_30':
                 return super().__new__(
                     cls,
                     *args,
@@ -5490,7 +5582,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 )
         
         
-        class any_of_30(
+        class any_of_31(
             schemas.DictSchema
         ):
         
@@ -5565,7 +5657,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 *args: typing.Union[dict, frozendict.frozendict, ],
                 _configuration: typing.Optional[schemas.Configuration] = None,
                 **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
-            ) -> 'any_of_30':
+            ) -> 'any_of_31':
                 return super().__new__(
                     cls,
                     *args,
@@ -5574,7 +5666,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 )
         
         
-        class any_of_31(
+        class any_of_32(
             schemas.DictSchema
         ):
         
@@ -5665,7 +5757,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 *args: typing.Union[dict, frozendict.frozendict, ],
                 _configuration: typing.Optional[schemas.Configuration] = None,
                 **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
-            ) -> 'any_of_31':
+            ) -> 'any_of_32':
                 return super().__new__(
                     cls,
                     *args,
@@ -5674,7 +5766,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 )
         
         
-        class any_of_32(
+        class any_of_33(
             schemas.DictSchema
         ):
         
@@ -5749,7 +5841,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 *args: typing.Union[dict, frozendict.frozendict, ],
                 _configuration: typing.Optional[schemas.Configuration] = None,
                 **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
-            ) -> 'any_of_32':
+            ) -> 'any_of_33':
                 return super().__new__(
                     cls,
                     *args,
@@ -5758,7 +5850,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 )
         
         
-        class any_of_33(
+        class any_of_34(
             schemas.ComposedBase,
             schemas.DictSchema
         ):
@@ -6069,7 +6161,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 city: typing.Union[MetaOapg.properties.city, str, ],
                 _configuration: typing.Optional[schemas.Configuration] = None,
                 **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
-            ) -> 'any_of_33':
+            ) -> 'any_of_34':
                 return super().__new__(
                     cls,
                     *args,
@@ -6123,6 +6215,7 @@ class LegalPersonsCreateNewLegalPersonRequestClaimsItem(
                 cls.any_of_31,
                 cls.any_of_32,
                 cls.any_of_33,
+                cls.any_of_34,
             ]
 
     

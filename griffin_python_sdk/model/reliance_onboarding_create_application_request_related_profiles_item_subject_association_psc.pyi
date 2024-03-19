@@ -31,9 +31,6 @@ class RelianceOnboardingCreateApplicationRequestRelatedProfilesItemSubjectAssoci
 
 
     class MetaOapg:
-        required = {
-            "ownership-percent",
-        }
         
         class properties:
             ownership_percent = schemas.StrSchema
@@ -42,7 +39,6 @@ class RelianceOnboardingCreateApplicationRequestRelatedProfilesItemSubjectAssoci
                 "ownership-percent": ownership_percent,
                 "companies-house-url": companies_house_url,
             }
-    
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["ownership-percent"]) -> MetaOapg.properties.ownership_percent: ...
@@ -59,7 +55,7 @@ class RelianceOnboardingCreateApplicationRequestRelatedProfilesItemSubjectAssoci
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["ownership-percent"]) -> MetaOapg.properties.ownership_percent: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["ownership-percent"]) -> typing.Union[MetaOapg.properties.ownership_percent, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["companies-house-url"]) -> typing.Union[MetaOapg.properties.companies_house_url, schemas.Unset]: ...

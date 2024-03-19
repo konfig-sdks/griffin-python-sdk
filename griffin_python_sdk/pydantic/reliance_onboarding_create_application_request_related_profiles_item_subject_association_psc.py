@@ -17,7 +17,7 @@ from pydantic import BaseModel, Field, RootModel
 
 class RelianceOnboardingCreateApplicationRequestRelatedProfilesItemSubjectAssociationPsc(BaseModel):
     # The percentage ownership the legal person has of the corporation.
-    ownership-percent_: str = Field(alias='ownership-percent')
+    ownership-percent_: typing.Optional[str] = Field(None, alias='ownership-percent')
 
     # The URL of the entity in Companies House
     companies-house-url_: typing.Optional[str] = Field(None, alias='companies-house-url')

@@ -75,6 +75,7 @@ class WorkflowsGetWorkflowResponseRequiredClaimTypes(
                             "business-email-address": "BUSINESSEMAILADDRESS",
                             "client-money-protection-scheme": "CLIENTMONEYPROTECTIONSCHEME",
                             "individual-sources-of-funds": "INDIVIDUALSOURCESOFFUNDS",
+                            "nominal-person-with-significant-control": "NOMINALPERSONWITHSIGNIFICANTCONTROL",
                             "hmo-verification": "HMOVERIFICATION",
                             "business-address": "BUSINESSADDRESS",
                             "employment": "EMPLOYMENT",
@@ -191,6 +192,10 @@ class WorkflowsGetWorkflowResponseRequiredClaimTypes(
                     @schemas.classproperty
                     def INDIVIDUALSOURCESOFFUNDS(cls):
                         return cls("individual-sources-of-funds")
+                    
+                    @schemas.classproperty
+                    def NOMINALPERSONWITHSIGNIFICANTCONTROL(cls):
+                        return cls("nominal-person-with-significant-control")
                     
                     @schemas.classproperty
                     def HMOVERIFICATION(cls):
